@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Danesh</title>
+  <title>Contact</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -31,6 +31,7 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 1rem;
     }
     button {
       background: #9933CC;
@@ -38,12 +39,17 @@
       border: none;
       padding: 10px 15px;
       border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <form name="contact" method="POST" data-netlify="true" action="https://dkhosur.site">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+    <input type="hidden" name="form-name" value="contact" />
+    <p hidden>
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
     <h2>Contact Me</h2>
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
